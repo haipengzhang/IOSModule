@@ -1,0 +1,21 @@
+module A {
+ header "A.h"
+}
+
+module B {
+ header "B.h"
+ export A   //export A表示将B.h导入的A.h头文件重新导出
+}
+
+
+/**
+ 通过clang命令，开启module并将use.c编译成目标文件
+ clang  -fmodules -fmodule-map-file=module.modulemap -fmodules-cache-path=./prebuilt -c use.c -o use.o
+ -fmodules：允许使用module语言来表示头文件
+ -fmodule-map-file：module map的路径。此参数缺失，默认找module.modulemap文件，如果文件不存在，执行会报错。
+ 
+ 开启module后，项目中导入头文件，无论使用#include、#import、@import中何种方式，最终都会映射为@import方式
+ 
+ @import>#import>#include
+ 开启module时，头文件会被预先编译成二进制文件，并且每个头文件只会被编译一次。此时无论有多少文件导入头文件，都不会被重复编译，只需要执行N次即可
+ */

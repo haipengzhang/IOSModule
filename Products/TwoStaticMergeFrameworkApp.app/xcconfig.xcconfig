@@ -1,0 +1,18 @@
+//
+//  xcconfig.xcconfig
+//  TwoStaticMergeFrameworkApp
+//
+//  Created by Jimzhang on 2023/3/22.
+//
+
+// Configuration settings file format documentation can be found at:
+// https://help.apple.com/xcode/#/dev745c5c974
+
+// header
+HEADER_SEARCH_PATHS = $(inherited) "$(PROJECT_DIR)/LGSwiftC/Public/LGSwiftA.framework/Headers" "${PROJECT_DIR}/LGSwiftC/Public/LGSwiftB.framework/Headers"
+
+// OTHER_CFLAGS：传递给用来编译C或者OC的编译器，当前就是clang加载modulemap文件的路径，对应Build Setting中的配置项
+OTHER_CFLAGS = $(inherited) "-fmodule-map-file=${PROJECT_DIR}/LGSwiftC/Public/LGSwiftA.framework/module.modulemap" "-fmodule-map-file=${PROJECT_DIR}/LGSwiftC/Public/LGSwiftB.framework/module.modulemap"
+
+// SWIFT_INCLUDE_PATHS：传递给SwiftC编译器 在指定路径下查找swiftmodule文件，这是给swift文件检索用的
+SWIFT_INCLUDE_PATHS = $(inherited) "${PROJECT_DIR}/LGSwiftC/Public/LGSwiftA.framework" "${PROJECT_DIR}/LGSwiftC/Public/LGSwiftB.framework"

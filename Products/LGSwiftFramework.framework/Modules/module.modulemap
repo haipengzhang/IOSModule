@@ -1,0 +1,13 @@
+// 显示的暴露了，api都会暴露出去
+framework module LGSwiftFramework {
+   umbrella header "Headers.h"
+   export *
+}
+
+// LGSwiftFramework/LGSwiftFramework.modulemap
+
+
+module LGSwiftFramework.Swift {
+  header "LGSwiftFramework-Swift.h"
+  requires objc
+}

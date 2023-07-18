@@ -1,0 +1,4 @@
+framework module LGSwiftA {
+  header "LGSwiftA-Swift.h"
+  requires objc
+}

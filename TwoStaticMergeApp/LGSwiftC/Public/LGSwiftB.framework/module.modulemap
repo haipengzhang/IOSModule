@@ -1,0 +1,4 @@
+framework module LGSwiftB {
+  header "LGSwiftB-Swift.h"
+  requires objc
+}

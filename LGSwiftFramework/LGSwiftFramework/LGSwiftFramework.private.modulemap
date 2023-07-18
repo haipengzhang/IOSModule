@@ -1,0 +1,11 @@
+// 通过这种private的方式，可以实现sdk之类包装常见的变动api
+// LGOCStudent -> LGOCStudent_Private Module，不会重名
+// build setting修改Private Module Map File
+// LGOCStudent_Private必须是public的
+framework module LGSwiftFramework_Private {
+   module LGOCStudent {
+       header "LGOCStudent_Private.h"
+       export *
+   }
+}
+// LGSwiftFramework/LGSwiftFramework.private.modulemap

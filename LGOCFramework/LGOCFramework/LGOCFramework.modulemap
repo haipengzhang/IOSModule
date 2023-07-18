@@ -1,0 +1,14 @@
+framework module LGOCFramework {
+   umbrella header "LGOCFramework.h"
+
+   explicit module LGTeacher {
+       header "LGTeacher.h"
+       export *
+   }
+   explicit module LGStudent {
+       header "LGStudent.h"
+       export *
+   }
+}
+
+//LGOCFramework/LGOCFramework.modulemap

@@ -1,0 +1,13 @@
+Name: OCFramework
+Classes:
+- Name: LGToSwift
+#  SwiftName: ToSwift
+ Methods:
+ - Selector: "changeTeacherName:"
+   Parameters:
+   - Position: 0
+     Nullability: O
+   MethodKind: Instance
+   SwiftPrivate: true
+   Availability: nonswift
+   AvailabilityMsg: "prefer 'deinit'"
